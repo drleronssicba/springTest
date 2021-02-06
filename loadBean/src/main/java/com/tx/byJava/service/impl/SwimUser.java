@@ -19,4 +19,6 @@ public class SwimUser implements IUserService {
             equip.canDo();
         }
     }
+
+    public void testSwimUser(){}
 }
