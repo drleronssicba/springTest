@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="load_bean_high:war">
+    <output-path>$PROJECT_DIR$/load_bean_high/target</output-path>
+    <root id="archive" name="load_bean_high.war">
+      <element id="artifact" artifact-name="load_bean_high:war exploded" />
+    </root>
+  </artifact>
+</component>
