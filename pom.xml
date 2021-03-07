@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>loadBean</module>
+        <module>loadBean_high</module>
+        <module>loadBean_high</module>
     </modules>
 
     <dependencies>
