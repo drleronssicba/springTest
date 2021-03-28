@@ -6,8 +6,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class SportUser implements IUserService {
 
+    String userNmae;
+    int age;
+
+    public SportUser(String userName,int age){
+        this.userNmae = userName;
+        this.age = age;
+    }
+
     @Override
     public void study() {
-        System.out.println("i am studying sports skills");
+        System.out.println(userNmae+"---"+age+"--i am studying sports skills");
     }
 }
