@@ -9,6 +9,8 @@ public class SportUser implements IUserService {
     String userNmae;
     int age;
 
+    public SportUser(){}
+
     public SportUser(String userName,int age){
         this.userNmae = userName;
         this.age = age;
