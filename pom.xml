@@ -11,6 +11,7 @@
     <modules>
         <module>loadBean</module>
         <module>loadBean_high</module>
+        <module>aop</module>
     </modules>
 
     <dependencies>
@@ -28,6 +29,17 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId> org.aspectj</groupId >
+            <artifactId> aspectjweaver</artifactId >
+            <version> 1.6.11</version >
         </dependency>
     </dependencies>
     <build>
