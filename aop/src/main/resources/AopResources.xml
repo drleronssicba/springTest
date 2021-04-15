@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 被通知类 -->
+    <bean id="basketBallPlayer" class="aop.BasketBallPlayer"></bean>
+
+    <!-- 切面类 -->
+    <bean id="xmlAop" class="aop.XmlAop"></bean>
+
+    <aop:config>
+        <aop:pointcut id="pt" expression="execution(* aop.Player.play(..))"></aop:pointcut>
+        <aop:pointcut id="paramPt" expression="execution(* aop.Player.work(String)) and args(name)"></aop:pointcut>
+        <aop:aspect id="as" ref="xmlAop">
+            <aop:before method="xmlBefore" pointcut-ref="pt"></aop:before>
+            <aop:after method="xmlAfter" pointcut-ref="pt"></aop:after>
+            <aop:after-throwing method="xmlAfterThrowing" pointcut-ref="pt"></aop:after-throwing>
+            <aop:around method="xmlAround" pointcut-ref="pt"></aop:around>
+
+            <aop:before method="beforeCount" pointcut-ref="paramPt"></aop:before>
+            
+            <aop:declare-parents types-matching="aop.Player+" implement-interface="aop.Action" default-impl="aop.SocaiAction"></aop:declare-parents>
+        </aop:aspect>
+    </aop:config>
+
+
+    <!--<aop:config>
+        <aop:pointcut expression="execution(* com.huitong.Dao3.UserDao.*(..))" id="pt"/>
+        <aop:aspect id="asp" ref="aop">
+            <aop:around method="around" pointcut-ref="pt"/>
+
+        </aop:aspect>
+    </aop:config>-->
+</beans>

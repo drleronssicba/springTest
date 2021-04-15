@@ -16,4 +16,9 @@ public class BasketBallPlayer implements Player {
         System.out.println("kobe play basketball!!");
         throw  new Exception("11");
     }
+
+    @Override
+    public void work(String playerName) {
+        System.out.println(playerName+"is work!");
+    }
 }
